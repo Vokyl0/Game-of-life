@@ -9,7 +9,7 @@ public class LifeGame {
         this.board = new boolean[25][25];
         this.rules = rules;
     }
-    public void show(){
+    private void show(){
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 if (board[i][j]){
@@ -31,7 +31,7 @@ public class LifeGame {
     public void invertPoint(int a, int b){
         board[a][b] = !board[a][b];
     }
-    public int countAliveNeighbours(int a, int b){
+    private int countAliveNeighbours(int a, int b){
         int aliveNeighbours = 0;
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
@@ -45,7 +45,7 @@ public class LifeGame {
         }
         return aliveNeighbours;
     }
-    public void nextStep(){
+    private void nextStep(){
         List<Integer> stayAlive = new ArrayList<>();
         List<Integer> becomeAlive = new ArrayList<>();
         char[] stayAliveArray = rules.split("/")[0].toCharArray();
